@@ -1,0 +1,41 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+        <title>Twistlock Servers</title>
+    </head>
+    <body style="background-image:url(https://www.twistlock.com/wp-content/uploads/2018/05/2.4-header.png)">
+        <a class="navbar-brand" href="#"><img width="200" height="45" src="https://www.twistlock.com/wp-content/uploads/2017/11/Twistlock_Logo-Lockup_RGB.png" alt=""></a>
+        <div class="conatiner">
+            <div class="row" style="margin-top: 25vh">
+                <div class="col text-center">
+                    <h1>Top Secret File Uploader</h1>
+                </div>
+            </div>
+            <div class="row" style="margin-top: 2vh">
+                <div class="col text-center">
+                    <form target="frame" action="/api/v1/upload" method="GET">
+                        <div class="form-group">
+                            <input type="text" class="form-control" name="url" id="url" style="width: 60vw; margin-left: 18vw">
+                        </div>
+                        <button type="submit" class="btn btn-primary">Upload To Our Servers</button>
+                    </form>
+                    <iframe name="frame" id="frame" style="display: none"></iframe>
+                </div>
+            </div>
+            <div class="row" style="margin-top: 10vh">
+                <div class="col text-center">
+                    <img src="/images/1.png" alt="" width="200" height="70">
+                </div>
+                <div class="col text-center">
+                    <img src="/images/3.png" alt="" width="200" height="100">
+                </div>
+                <div class="col text-center">
+                    <img src="/images/2.png" alt="" width="200" height="50">
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
