@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: solver
+spec:
+  containers:
+  - name: solver
+    imagePullPolicy: Never
+    image: solver:latest
+    ports:
+    - containerPort: 1337

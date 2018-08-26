@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: captain
+spec:
+  containers:
+  - name: captain
+    imagePullPolicy: Never
+    image: captain:latest
