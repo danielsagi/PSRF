@@ -1,9 +1,0 @@
-apiVersion: v1
-kind: Pod
-metadata:
-  name: decoy
-spec:
-  containers:
-  - name: captain
-    imagePullPolicy: Never
-    image: captain:latest

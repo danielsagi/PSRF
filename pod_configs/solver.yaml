@@ -5,7 +5,7 @@ metadata:
 spec:
   containers:
   - name: solver
-    imagePullPolicy: Never
-    image: solver:latest
+    imagePullPolicy: IfNotPresent
+    image: itaibennatan/psrf:solver
     ports:
     - containerPort: 1337

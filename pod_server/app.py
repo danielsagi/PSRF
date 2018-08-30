@@ -16,9 +16,9 @@ def PSRF():
 			if webhook:
 				try:
 					r = requests.post(webhook, data="{flag}".format(flag=FLAG))
-					data = "all done. check your webhook captain, the flag is there."
+					data = "all done. check your webhook captain, the flag is there.\n"
 				except:
-					return "give me a *valid* webhook", 500
+					return "give me a *valid* webhook\n", 500
 			else:
 				data = "pass me a webhook please\n"
 		else:

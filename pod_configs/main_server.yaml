@@ -1,9 +1,9 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  name: captain
+  name: server
 spec:
   containers:
-  - name: captain
+  - name: server
     imagePullPolicy: IfNotPresent
-    image: itaibennatan/psrf:captain
+    image: itaibennatan/psrf:server
