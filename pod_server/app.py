@@ -8,25 +8,23 @@ POD_IP = "127.0.0.1"
 
 @app.route('/')
 @app.route('/flag') # append something for addess to send the flag to
-def PSRF(flag=None, url=None):
+def PSRF():
 	data = ""
-
 	if request.remote_addr == POD_IP:
-		if flag:
-			try:
-				url = request.args.get('url', default = 1, type = str)
-				if url == "flag":
-						r = requests.post(url, data="{flag}"
-						.format(flag=FLAG))
-				else:
-					data = "¯\_(ツ)_/¯ 'What do you want?'\n"
-			except Exception as x:
-				return ""
-
+		if "flag" in request.url_rule.rule:
+			webhook = request.args.get("webhook", "")
+			if webhook:
+				try:
+					r = requests.post(webhook, data="{flag}".format(flag=FLAG))
+					data = "all done. check your webhook captain, the flag is there."
+				except:
+					return "give me a *valid* webhook", 500
+			else:
+				data = "pass me a webhook please\n"
 		else:
-			data = "( ͡° ͜ʖ ͡°)\n"
+			data = "go to /flag!!!\n"
 	else:
-		data = "ಠ_ಠ\n"
+		data = "i only get requests from the captain :/\n"
 
 	return str(data)
 
