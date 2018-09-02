@@ -1,9 +1,13 @@
 apiVersion: v1
-kind: Pod
+kind: Deployment
 metadata:
   name: server
+  labels:
+    name: server
 spec:
   containers:
   - name: server
     imagePullPolicy: IfNotPresent
     image: itaibennatan/psrf:server
+  nodeSelector:
+    nodename: bob

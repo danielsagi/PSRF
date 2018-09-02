@@ -2,8 +2,12 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: captain
+  labels:
+    name: captain
 spec:
   containers:
   - name: captain
     imagePullPolicy: IfNotPresent
     image: itaibennatan/psrf:captain
+  nodeSelector:
+    nodename: bob
