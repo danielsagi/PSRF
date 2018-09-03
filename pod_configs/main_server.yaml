@@ -6,3 +6,6 @@ spec:
   containers:
   - name: server
     image: itaibennatan/psrf:server
+  nodeSelector:
+    nodename: alice
+s
