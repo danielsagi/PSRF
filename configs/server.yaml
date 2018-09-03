@@ -7,4 +7,8 @@ spec:
   - name: server
     image: itaibennatan/psrf:server
   nodeSelector:
+<<<<<<< HEAD
     debug_handlers: "no"
+=======
+    nodename: bob
+>>>>>>> 8c07bc488bbc78542128eb24d2f0c84731a5444b
