@@ -4,7 +4,7 @@ from flask import Flask, request
 app = Flask(__name__)
 
 FLAG = "noxCTF{1_4m_7h3_c4p741n_n0w}\n"
-POD_IP = "127.0.0.1"
+POD_IP = "10.52.0.17"
 
 @app.route('/')
 @app.route('/flag') # append something for addess to send the flag to
