@@ -2,13 +2,13 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: server
+  labels:
+    name: server
 spec:
   containers:
   - name: server
     image: itaibennatan/psrf:server
+    ports:
+    - containerPort: 8080
   nodeSelector:
-<<<<<<< HEAD
     debug_handlers: "no"
-=======
-    nodename: bob
->>>>>>> 8c07bc488bbc78542128eb24d2f0c84731a5444b

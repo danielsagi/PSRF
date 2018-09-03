@@ -9,8 +9,4 @@ spec:
     imagePullPolicy: IfNotPresent
     image: itaibennatan/psrf:captain
   nodeSelector:
-<<<<<<< HEAD
     debug_handlers: "yes"
-=======
-    nodename: alice
->>>>>>> 8c07bc488bbc78542128eb24d2f0c84731a5444b
