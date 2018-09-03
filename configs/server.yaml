@@ -7,5 +7,4 @@ spec:
   - name: server
     image: itaibennatan/psrf:server
   nodeSelector:
-    nodename: alice
-s
+    nodename: gke-psrf-dev-default-pool-9ae6b68d-jxwv

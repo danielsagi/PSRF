@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: solver
+  labels:
+    name: solver
+spec:
+  containers:
+  - name: solver
+    imagePullPolicy: IfNotPresent
+    image: itaibennatan/psrf:solver
+    ports:
+    - containerPort: 1337
+  nodeSelector:
+    nodename: gke-psrf-dev-default-pool-9ae6b68d-jxwv
