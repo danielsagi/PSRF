@@ -3,9 +3,10 @@ kind: Pod
 metadata:
   name: captain
 spec:
+  hostname: captain
   containers:
   - name: captain
     imagePullPolicy: IfNotPresent
     image: itaibennatan/psrf:captain
   nodeSelector:
-    nodename: gke-psrf-dev-default-pool-9ae6b68d-9f57
+    debug_handlers: "yes"
