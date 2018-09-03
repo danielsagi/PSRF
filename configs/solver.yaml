@@ -12,4 +12,4 @@ spec:
     ports:
     - containerPort: 1337
   nodeSelector:
-    nodename: gke-psrf-dev-default-pool-9ae6b68d-jxwv
+    nodename: bob
