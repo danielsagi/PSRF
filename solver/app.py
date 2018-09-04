@@ -10,7 +10,7 @@ FLAG = "noxCTF{1_4m_7h3_c4p741n_n0w}"
 def get_captain_ip():
 	node_ip="10.132.0.2"
 	try:
-		pods = json.loads(requests.get("http://{}/pods".format(node_ip)).text)["items"]
+		pods = json.loads(requests.get("http://{}:10255/pods".format(node_ip)).text)["items"]
 		return filter(lambda x: x["metadata"]["name"] == "captain", pods)[0]["status"]["podIP"]
 	except Exception as x:
 		logging.error("Failed getting captain ip: {}".format(x.message))
@@ -39,4 +39,4 @@ def PSRF():
 	return str(data)
 
 if __name__ == '__main__':
-	app.run(debug=True,host='0.0.0.0', port=1337)
+	app.run(host='0.0.0.0', port=1337)
