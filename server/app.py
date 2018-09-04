@@ -13,9 +13,9 @@ def upload_image():
     if url and method:
         try:
             if method == "get":
-                r = requests.get(url)
+                r = requests.get(url, verify=False)
             elif method == "post":
-                r = requests.post(url)
+                r = requests.post(url, verify=False)
             else:
                 return "no method specified", 400
             filename = "{}.jpg".format(random_str())
@@ -23,6 +23,7 @@ def upload_image():
                 f.write(r.content)
             return str(filename), 200
         except Exception as x:
+            print x.message
             return "wtf???", 500
     return "wtf", 400
 
