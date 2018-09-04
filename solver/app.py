@@ -1,16 +1,25 @@
 # -*- coding: utf-8 -*-
+import json
 import requests
 from flask import Flask, request
 app = Flask(__name__)
 
-FLAG = "noxCTF{1_4m_7h3_c4p741n_n0w}\n"
-POD_IP = "10.52.0.17"
+FLAG = "noxCTF{1_4m_7h3_c4p741n_n0w}"
 
+def get_captain_ip():
+	node_ip="10.132.0.2"
+	try:
+		pods = json.loads(requests.get("http://{}/pods".format(node_ip)).text)["items"]
+		return filter(lambda x: x["metadata"]["name"] == "captain", pods)["status"]["podIP"]
+	except Exception as x:
+		print "Failed getting captain ip: {}".format(x.message)
+		
 @app.route('/')
 @app.route('/flag') # append something for addess to send the flag to
 def PSRF():
 	data = ""
-	if request.remote_addr == POD_IP:
+	captain_ip = get_captain_ip()
+	if captain_ip and request.remote_addr == captain_ip:
 		if "flag" in request.url_rule.rule:
 			webhook = request.args.get("webhook", "")
 			if webhook:
