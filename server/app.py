@@ -6,12 +6,18 @@ app = Flask(__name__, static_url_path='')
 
 random_str = lambda: ''.join(random.choice(string.ascii_lowercase + string.digits) for _ in range(20))
 
-@app.route('/api/v1/upload', methods=["GET"])
+@app.route('/api/v1/upload', methods=["GET"],)
 def upload_image():
+    method = request.args.get('method', '')
     url = request.args.get('url', '')
-    if url:
+    if url and method:
         try:
-            r = requests.get(url)
+            if method == "get":
+                r = requests.get(url)
+            elif method == "post":
+                r = requests.post(url)
+            else:
+                return "no method specified", 400
             filename = "{}.jpg".format(random_str())
             with open("images/{filename}".format(filename=filename), 'wb') as f:
                 f.write(r.content)
