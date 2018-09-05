@@ -36,13 +36,13 @@ def get_image(filename=None):
 @app.route('/logs')
 def hints():
     return """
-    [04/Sep/2018 22:00:01] deployed new node on: 10.132.0.2
-    [04/Sep/2018 22:30:58] deployed new node on: 10.132.0.9
-    [04/Sep/2018 23:08:28] server pod deployed to: 10.132.0.9
-    [05/Sep/2018 00:08:53] top secret solver was deployed
-    [05/Sep/2018 03:00:20] the captain set sail on this ip: 10.132.0.2
-    [05/Sep/2018 03:08:14] [ERROR] failed restricting access to /pods readonly port
-    [05/Sep/2018 03:09:09] [ERROR] failed updating kubelet to remove debug handlers on captain's node             
+    [04/Sep/2018 22:00:01] deployed new node on: 10.132.0.2\n
+    [04/Sep/2018 22:30:58] deployed new node on: 10.132.0.9\n
+    [04/Sep/2018 23:08:28] server pod deployed to: 10.132.0.9\n
+    [05/Sep/2018 00:08:53] top secret solver was deployed\n
+    [05/Sep/2018 03:00:20] the captain set sail on this ip: 10.132.0.2\n
+    [05/Sep/2018 03:08:14] [ERROR] failed restricting access to /pods readonly port\n
+    [05/Sep/2018 03:09:09] [ERROR] failed updating kubelet to remove debug handlers on captain's node\n             
     """
     
 @app.route('/')
