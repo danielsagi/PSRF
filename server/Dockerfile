@@ -1,23 +1,11 @@
-# FROM ubuntu:latest
-# RUN apt-get update -y
-# RUN apt-get install -y python-pip python-dev build-essential
-# COPY . /app
-# WORKDIR /app
-# RUN pip install -r requirements.txt
-# ENTRYPOINT ["python"]
-# CMD ["app.py"]
+FROM tiangolo/uwsgi-nginx-flask:python2.7
 
-FROM nginx:latest
+# copy over our requirements.txt file
+COPY requirements.txt /tmp/
 
-## SlowLoris mitigation
-COPY nginx.conf /etc/nginx/
-RUN service nginx restart
+# upgrade pip and install required python packages
+RUN pip install -U pip
+RUN pip install -r /tmp/requirements.txt
 
-## Dependancies
-RUN apt-get update -y
-RUN apt-get install -y python-pip python-dev build-essential
+# copy over our app code
 COPY . /app
-WORKDIR /app
-RUN pip install -r requirements.txt
-ENTRYPOINT ["python"]
-CMD ["app.py"]
