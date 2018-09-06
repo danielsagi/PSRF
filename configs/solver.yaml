@@ -8,7 +8,7 @@ spec:
   hostname: solver
   containers:
   - name: solver
-    imagePullPolicy: Always
+    imagePullPolicy: IfNotPresent
     image: itaibennatan/psrf:solver
     ports:
     - containerPort: 1337

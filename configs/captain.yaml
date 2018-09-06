@@ -6,7 +6,7 @@ spec:
   hostname: captain
   containers:
   - name: captain
-    imagePullPolicy: Always
+    imagePullPolicy: IfNotPresent
     image: itaibennatan/psrf:captain
   nodeSelector:
     debug_handlers: "yes"
