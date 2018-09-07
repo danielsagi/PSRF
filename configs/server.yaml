@@ -7,7 +7,7 @@ metadata:
 spec:
   containers:
   - name: server
-    imagePullPolicy: Always
+    imagePullPolicy: IfNotPresent
     image: itaibennatan/psrf:server
     ports:
     - containerPort: 80
